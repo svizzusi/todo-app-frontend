@@ -20,11 +20,11 @@ const Login = () => {
     axios.post('https://easy-puce-snapper-ring.cyclic.cloud/users/login', {email, password})
     
     .then( (res) => {
+      if (res.data.success){
       navigate('/home')
-      console.log(res)
-      console.log(res.data.message)
-      console.log(res.data.success)
-
+      } else {
+        alert(res.data.message)
+      }
       window.sessionStorage.setItem('userName', res.data.userName)
       window.sessionStorage.setItem('userId', res.data.id)
     })
