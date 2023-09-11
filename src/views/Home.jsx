@@ -33,7 +33,7 @@ const Home = ({setShowNavBar}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/todos/todo/${userId}`);
+                const response = await axios.get(`https://easy-puce-snapper-ring.cyclic.cloud/todos/todo/${userId}`);
                 console.log(response.data);
                 setTasks(response.data);
             } catch (err) {
@@ -47,7 +47,7 @@ const Home = ({setShowNavBar}) => {
     }, [userId]);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/todos/deletetask/${id}`)
+        axios.delete(`https://easy-puce-snapper-ring.cyclic.cloud/todos/deletetask/${id}`)
         .catch(err => console.log(err))
         window.location.reload()
     }

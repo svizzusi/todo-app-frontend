@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3000/users/login', {email, password})
+    axios.post('https://easy-puce-snapper-ring.cyclic.cloud/users/login', {email, password})
     
     .then( (res) => {
       navigate('/home')

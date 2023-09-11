@@ -37,7 +37,7 @@ const UpdateTask = () => {
 
   // Fetch task information from the server
   useEffect(() => {
-    axios.get(`http://localhost:3000/todos/gettask/${id}`)
+    axios.get(`https://easy-puce-snapper-ring.cyclic.cloud/todos/gettask/${id}`)
       .then(res => {
         setTaskName(res.data.taskName || '');
         setTaskTime(res.data.taskTime || '');
@@ -49,7 +49,7 @@ const UpdateTask = () => {
   // Handle update task submission
   const handleUpdate = (e) => {
     e.preventDefault()
-    axios.put(`http://localhost:3000/todos/updatetask/${id}`, {taskName, taskTime, taskDate})
+    axios.put(`https://easy-puce-snapper-ring.cyclic.cloud/todos/updatetask/${id}`, {taskName, taskTime, taskDate})
     .then( (res) => {
       console.log(res)
       navigate('/home')

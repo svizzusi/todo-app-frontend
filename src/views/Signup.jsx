@@ -34,7 +34,7 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:3000/users/signup', { name, email, password });
+      const res = await axios.post('https://easy-puce-snapper-ring.cyclic.cloud/users/signup', { name, email, password });
       console.log(res);
       console.log(res.data);
       console.log(res.data.message)

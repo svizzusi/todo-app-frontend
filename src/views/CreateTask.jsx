@@ -44,7 +44,7 @@ const CreateTask = () => {
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('http://localhost:3000/todos/createtask', {taskName, taskTime, taskDate, userId})
+    axios.post('https://easy-puce-snapper-ring.cyclic.cloud/todos/createtask', {taskName, taskTime, taskDate, userId})
     .then( () => navigate('/home') )
     .catch(err => console.log(err)) 
   }
