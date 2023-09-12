@@ -48,9 +48,12 @@ const Home = ({setShowNavBar}) => {
 
     const handleDelete = (id) => {
         axios.delete(`https://easy-puce-snapper-ring.cyclic.cloud/todos/deletetask/${id}`)
-        .catch(err => console.log(err))
-        window.location.reload()
-    }
+            .then(() => {
+                // Remove the deleted task from the local state
+                setTasks((prevTasks) => prevTasks.filter((task) => task._id !== id));
+            })
+            .catch((err) => console.log(err));
+    };
 
   return (
     <>
