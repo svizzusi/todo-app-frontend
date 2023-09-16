@@ -55,6 +55,7 @@ const Login = () => {
     </div>
 
     <div className="flex flex-col justify-between items-center gap-2">
+      
       <label className="text-lg text-black ">Password</label>
       <input
         className="bg-white rounded-lg w-full p-2"
