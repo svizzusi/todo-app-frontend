@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+
 const Login = () => {
 
   const navigate = useNavigate()
@@ -21,6 +22,9 @@ const Login = () => {
     .then( (res) => {
       navigate('/home')
       console.log(res)
+      console.log(res.data.message)
+      console.log(res.data.success)
+
       window.sessionStorage.setItem('userName', res.data.userName)
       window.sessionStorage.setItem('userId', res.data.id)
     })
@@ -67,7 +71,7 @@ const Login = () => {
       type="submit" 
       >Login
     </button>
-
+    
     <p>Do you need to create an account? <Link to='/signup'>Sign Up</Link></p>
 
   </form>
